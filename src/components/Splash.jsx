@@ -2,7 +2,7 @@ import React from "react"
 
 export default function Splash({categories, handleStartButton}){
 
-    const {category, difficulty, questionType} = JSON.parse(localStorage.getItem("quizSettings"))
+    const {category, difficulty, questionType} = JSON.parse(localStorage.getItem("quizSettings")) || {category: "", difficulty: "", questionType: ""}
 
     return (
         <div className="splash-container">
