@@ -2,6 +2,8 @@ import React from "react"
 
 import Splash from "./components/Splash"
 import Question from "./components/Question"
+import HSGlobal from "./components/HSGlobal"
+import HSLocal from "./components/HSLocal"
 
 export default function App(){
 
@@ -146,6 +148,7 @@ export default function App(){
             {splashPage && <Splash categories={categories} handleStartButton={handleStartButton}/>}
             {!splashPage && 
                 <div className="quiz-container">
+                    <HSLocal /> {/* NEW */}
                     {questions.map((e,i) => 
                     <Question 
                         key={i}
@@ -164,8 +167,23 @@ export default function App(){
                             onClick={handleCheckAnswers}
                         >{submitAnswers ? "Try Another" : "Check Answers"}</button>
                     </div>
+                    <HSGlobal /> {/* NEW */}
                 </div>
             }
         </div>
     )
 }
+
+// TO DO:
+// change name to "jeopardy practice"
+// redundancy is splash for quizSettings object (already setting to "" when no local storage)
+// restart button? (before game ends)
+// local highscores (localStorage) - best category (% per game), best difficulty per category (% per game)
+// firebase integration for global highscores
+// change boolean so it's always true > false (no randomization)
+
+// global high scores tab
+// difficulty
+// category
+// type
+// 
