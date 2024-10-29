@@ -148,7 +148,7 @@ export default function App(){
             {splashPage && <Splash categories={categories} handleStartButton={handleStartButton}/>}
             {!splashPage && 
                 <div className="quiz-container">
-                    <HSLocal /> {/* NEW */}
+                    {/* <HSLocal /> */}
                     {questions.map((e,i) => 
                     <Question 
                         key={i}
@@ -167,7 +167,7 @@ export default function App(){
                             onClick={handleCheckAnswers}
                         >{submitAnswers ? "Try Another" : "Check Answers"}</button>
                     </div>
-                    <HSGlobal /> {/* NEW */}
+                    {/* <HSGlobal /> */}
                 </div>
             }
         </div>
